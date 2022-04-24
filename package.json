@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/johnnyb1694/pool/issues"
   },
-  "homepage": "https://github.com/johnnyb1694/pool#readme"
+  "homepage": "https://github.com/johnnyb1694/pool#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
