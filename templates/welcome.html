@@ -8,6 +8,6 @@
     <p>Welcome to <span class="special-text">pool</span>, an online transaction processing tool!</p>
     <ul>
         <li><a href="{{ url_for('submit_transaction') }}">Post a transaction</a></li>
-        <li><a href="">View all transactions</a></li>
+        <li><a href="{{ url_for('view_all_transactions') }}">View all transactions</a></li>
     </ul>
 {% endblock %}

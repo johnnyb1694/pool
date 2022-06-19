@@ -2,12 +2,18 @@
 
 {% block title %}Post Transaction{% endblock %}
 
-{% block header %}<h1>Post a transaction to the database</h1>{% endblock %}
+{% block header %}<h1>Post a new transaction</h1>{% endblock %}
 
 {% block content %}
 <form method="post">
-    <label for="desc">Transaction description</label>
-    <input name="desc" id="desc" value="e.g. 1pt milk" required>
+    <label for="buyer">Buyer</label>
+    <input name="buyer" id="buyer" value="e.g. Johnny" required>
+    <label for="desc">Description</label>
+    <input name="desc" id="desc" value="e.g. soya milk" required>
+    <label for="amount">Amount (£)</label>
+    <input name="amount" id="amount" value="e.g. 1.50" required>
+    <label for="location">Location</label>
+    <input name="location" id="location" value="e.g. waitrose" required>
     <input type="submit" value="Submit transaction">
 </form>
 {% endblock %}
