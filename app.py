@@ -26,6 +26,7 @@ def submit_transaction():
                                   request.form['amount'],
                                   request.form['location'])
         transaction_log.append(transaction.to_dict())
+        print(transaction_log)
         return redirect(url_for('submit_success', id=transaction_id))
     return render_template('transaction.html')
 
