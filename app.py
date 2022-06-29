@@ -13,6 +13,13 @@ def get_max_transaction_id():
         max_id = 0
     return max_id
 
+def get_transaction_details(id):
+    try:
+        transaction_details = [t for t in transaction_log if t.id == id][0]
+    except:
+        transaction_details = None
+    return transaction_details
+
 @app.route('/')
 def index():
     return render_template('welcome.html')
@@ -25,19 +32,18 @@ def submit_transaction():
                                   request.form['desc'],
                                   request.form['amount'],
                                   request.form['location'])
-        transaction_log.append(transaction.to_dict())
-        print(transaction_log)
+        transaction_log.append(transaction)
         return redirect(url_for('submit_success', id=transaction_id))
     return render_template('transaction.html')
 
 @app.route('/submit-success/<int:id>')
 def submit_success(id):
-    return "Successfully submitted transaction: " + str(id)
+    transaction = get_transaction_details(id=id)
+    return render_template('success.html', transaction=transaction)
 
 @app.route('/view-all-transactions')
 def view_all_transactions():
     return "All transactions"
 
 if __name__ == '__main__':
-    max_id = get_max_transaction_id()
-    print(max_id)
+    pass

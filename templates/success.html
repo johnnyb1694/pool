@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Submission{% endblock %}
+
+{% block header %}<h1>Transaction successfully submitted</h1>{% endblock %}
+
+{% block content %}
+<p>Congratulations! You have successfully submitted the following transaction: </p>
+<ul>
+    <li>Description: {{ transaction.desc }}</li>
+    <li>Amount: {{ transaction.amount }}</li>
+    <li>Location: {{ transaction.location }}</li>
+</ul>
+
+<p>Return to the <a href="/">homepage</a></p>
+{% endblock %}
